@@ -1,0 +1,8 @@
+h2 Todo List
+.showing-info
+  list(ng-repeat= 'task in tasks')
+    ul(id="{{'task_'+task._id}}")
+      li {{task.title}}
+      li {{task.description}}
+      li {{task.priority}}
+      li {{task.due_date}}
