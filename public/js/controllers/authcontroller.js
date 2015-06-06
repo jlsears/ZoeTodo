@@ -4,15 +4,9 @@
     $scope.showLogin = false;
     $scope.user={};
 
-    $scope.showLoginBtn = function(){
-      $scope.showRegister = false;
-      $scope.showLogin = true;    
-    }
+    $scope.showLoginBtn = function(){$scope.showRegister = false; $scope.showLogin = true;}
 
-    $scope.showRegisterBtn = function(){
-      $scope.showRegister = true;
-      $scope.showLogin = false;    
-    }
+    $scope.showRegisterBtn = function(){$scope.showRegister = true; $scope.showLogin = false;}
 
     $scope.register = function(){
       console.log('you clicked the register button')
