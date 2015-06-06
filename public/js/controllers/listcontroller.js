@@ -6,7 +6,7 @@ controllers.controller('ListCtrl', function ($scope, $http) {
   var getList = function () {
     $http({
       method: 'GET',
-      url: '/api/tasks'
+      url: '/api/tasks',
     }).
     success(function (data, status, headers, config) {
       console.log('*****just look at this list!******', data)
@@ -17,4 +17,20 @@ controllers.controller('ListCtrl', function ($scope, $http) {
     });
   }
   getList();
+
+  $scope.delete = function (task) {
+    console.log('***you clicked the delete button***')
+      $http({
+      method: 'DELETE',
+      url: '/api/tasks/' + task,
+      data: $scope.tasks
+    }).
+    success(function (data, status, headers, config) {
+      console.log('**task deleted!**', data)
+      getList();
+    }).
+    error(function (data, status, headers, config) {
+      console.log('**deletion failed**')
+    });
+  };
 });

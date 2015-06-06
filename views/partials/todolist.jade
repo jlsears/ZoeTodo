@@ -6,3 +6,4 @@ h2 Todo List
       li {{task.description}}
       li {{task.priority}}
       li {{task.due_date}}
+      button.btn.btn-danger(ng-click='delete(task._id)') Delete
